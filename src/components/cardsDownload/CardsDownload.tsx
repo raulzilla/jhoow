@@ -36,7 +36,10 @@ const helpDiscord = {
 }
 
 const card = {
-  display: 'flex', 
+  display: {
+    xs: 'block',
+    sm: 'flex'
+  }, 
   flexDirection: 'row', 
   alignItems: 'flex-start'
 }
@@ -98,7 +101,7 @@ const CardsDownload = (props: { title: string, data: cardsDownloadTypes.Data[], 
         sx={props.id ? { ...card, justifyContent: 'center'} : { ...card, justifyContent: 'flex-start'}}
       > 
         {props.id && idFilter.map((item, index) => (
-          <Grid sm={6} md={4} key={`card-${index}`}>
+          <Grid sm={6} md={4} sx={{ padding: '20px' }} key={`card-${index}`}>
             <Card sx={{ padding: '12px', background: theme.jhoow.palette.primary.main, borderRadius: '10px' }}>
               <CardContent sx={{ background: theme.jhoow.palette.primary.dark, borderRadius: '10px' }}>
                 <CardMedia
