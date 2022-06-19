@@ -14,15 +14,15 @@ const Home = () => {
   return (
     <Fragment>
       <Header title='INICIO'/>
-      <Grid container p={5}>
-        <Grid item p={5} xs={12} md={8} sx={{ padding: '40px 40px 40px 40px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Grid container sx={{ padding: { xs: '20px', md: '40px'}}}>
+        <Grid item xs={12} md={8} sx={{ padding: { xs: '0', md: '40px'}, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Card sx={{ background: theme.jhoow.palette.primary.main, color: 'white', width: '100%', borderRadius: '40px', position: 'relative', zIndex: '-1' }}>
             <CardContent>
               <Logo type='main'/>
               <Typography align='center' variant='body2' component='div' color='white' sx={prompt}>
                 Sobre/Youtube
               </Typography>
-              <Container sx={{ display: 'flex', alignItems: 'center', padding: 0 }}>
+              <Container sx={{ display: 'flex', alignItems: 'center', padding: 0, flexDirection: { xs: 'column', md: 'row' } }}>
                 <Container sx={{ padding: '0 !important' }}>
                   <Typography variant='body2' color='white' sx={prompt}>Bom! Esse canal tem foco em conteúdos de Minecraft. Nele posto vídeos jogando:</Typography>
                   <ListItem component='div' sx={{ paddingLeft: 0 }}>
@@ -56,7 +56,7 @@ const Home = () => {
             </CardContent>
           </Card>
         </Grid>
-        <Grid item xs={12} md={4} sx={{ padding: '40px 40px 40px 40px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '680px' }}>
+        <Grid xs={12} md={4} sx={{ padding: { xs: '20px', md: '40px'}, display: 'flex', justifyContent: 'center', alignItems: 'center', height: '680px' }}>
           <iframe title='discord' className='iframe-discord' src='https://discord.com/widget?id=837164475018641488&theme=dark' frameBorder='0' sandbox='allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts'></iframe>
         </Grid>
       </Grid>

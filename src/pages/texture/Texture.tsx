@@ -18,7 +18,7 @@ const Texture = () => {
       });
   }, [])
 
-  return <CardsDownload title={'TEXTURA'} data={texture} id={param.id}/>
+  return <CardsDownload title={'TEXTURAS'} data={texture} id={param.id}/>
 }
 
 export default Texture

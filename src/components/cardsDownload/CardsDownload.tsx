@@ -28,7 +28,10 @@ const text = {
 const helpDiscord = {
   display: 'flex', 
   alignItems: 'center', 
-  justifyContent: 'flex-end',
+  justifyContent: {
+    xs: 'center',
+    md: 'flex-end'
+  },
   margin: '0 60px'
 }
 
@@ -68,8 +71,8 @@ const CardsDownload = (props: { title: string, data: cardsDownloadTypes.Data[], 
     <Fragment>
       <Header title={props.title}/>
       {!props.id && 
-        <Grid className='header' xs={12} sx={gridMain}>
-          <Paper sx={{ background: theme.jhoow.palette.primary.main, width: '50%' }}>
+        <Grid className='header' xs={12} sx={{...gridMain, margin: { xs: '15px 20px 0', md: '30px 60px 0' } }}>
+          <Paper sx={{ background: theme.jhoow.palette.primary.main, width: { xs: '70%', md: '50%'} }}>
             <FormControl fullWidth variant='outlined'>
               <InputLabel sx={text} htmlFor='outlined-adornment-pesquisar'>Pesquisar</InputLabel>
               <OutlinedInput
@@ -87,7 +90,7 @@ const CardsDownload = (props: { title: string, data: cardsDownloadTypes.Data[], 
           </Paper>
         </Grid>
         }
-      <Grid className='header' xs={12} sx={helpDiscord}>
+      <Grid className='header' xs={12} sx={{...helpDiscord, margin: { xs: '15px 20px 0', md: '30px 60px 0' }}}>
         <Button onClick={() => window.open('https://discord.gg/crWdG7XbJv', '_blank')} endIcon={<FlagIcon />}>Está com problemas?</Button>
       </Grid>
       <Grid
@@ -95,7 +98,7 @@ const CardsDownload = (props: { title: string, data: cardsDownloadTypes.Data[], 
         sx={props.id ? { ...card, justifyContent: 'center'} : { ...card, justifyContent: 'flex-start'}}
       > 
         {props.id && idFilter.map((item, index) => (
-          <Grid item sm={6} md={4} key={`card-${index}`}>
+          <Grid sm={6} md={4} key={`card-${index}`}>
             <Card sx={{ padding: '12px', background: theme.jhoow.palette.primary.main, borderRadius: '10px' }}>
               <CardContent sx={{ background: theme.jhoow.palette.primary.dark, borderRadius: '10px' }}>
                 <CardMedia
@@ -117,7 +120,7 @@ const CardsDownload = (props: { title: string, data: cardsDownloadTypes.Data[], 
           </Grid>
         ))}
         {!props.id && dataSearch.map((item, index) => (
-          <Grid item sm={6} md={4} key={`card-${index}`}>
+          <Grid sm={6} md={4} sx={{ padding: '20px' }} key={`card-${index}`}>
             <Card sx={{ padding: '12px', background: theme.jhoow.palette.primary.main, borderRadius: '10px' }}>
               <CardContent sx={{ background: theme.jhoow.palette.primary.dark, borderRadius: '10px' }}>
                 <CardMedia

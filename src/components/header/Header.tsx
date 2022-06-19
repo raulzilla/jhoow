@@ -10,7 +10,7 @@ const pages = [{
   name: 'inicio',
   router: '/'
 },{
-  name: 'textura',
+  name: 'texturas',
   router: '/texture'
 },{
   name: 'clients',
@@ -31,7 +31,7 @@ const Header = (props: { title: string }) => {
 
   return (
     <Fragment>
-      <AppBar position='static' className='header'>
+      <AppBar position='static' sx={{ margin: { xs: '15px 20px 0', md: '30px 60px 0' } }} className='header'>
         <Container maxWidth='xl'>
           <Toolbar disableGutters sx={{justifyContent: { xs: 'space-between'}}}>
             <Link to={'/'}><LogoIcon className='img'/></Link>
@@ -82,7 +82,7 @@ const Header = (props: { title: string }) => {
           </Toolbar>
         </Container>
       </AppBar>
-      <AppBar component='div' position='static' className='header'>
+      <AppBar component='div' position='static' sx={{ margin: { xs: '15px 20px 0', md: '30px 60px 0' } }} className='header'>
         <Toolbar>
           <Typography align='center' variant='h6' component='div' sx={{ flexGrow: 1, fontFamily: 'Poppins', fontSize: '2em' }}>
             {props.title}
