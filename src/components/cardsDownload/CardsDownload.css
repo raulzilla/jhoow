@@ -1,0 +1,25 @@
+.card-text, .card-text span {
+  font-family: 'Poppins';
+}
+
+.card-text span:first-child {
+  color: white !important;
+}
+
+.card-text span:last-child {
+  color: gray;
+}
+
+.button {
+  font-family: 'Poppins';
+  color: gray !important;
+  text-decoration: underline !important;
+}
+
+.button span {
+  color: #247FFF;
+}
+
+.Mui-focused {
+  color: white !important;
+}
